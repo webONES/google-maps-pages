@@ -8,6 +8,21 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    
+    <!-- add google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var mapCanvas = $('#map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+      });
+    </script>
   </head>
   <body>
     <section class="page-header">
@@ -20,10 +35,13 @@
 
     <section class="main-content">
       <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.
+      </h3>
 
-<p>Examples for Google Maps V3</p>
+      <p>Examples for Google Maps V3</p>
 
+      <div id="map-canvas"></div>
+      
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/webONES/google-maps-pages">Google-maps-pages</a> is maintained by <a href="https://github.com/webONES">webONES</a>.</span>
 
