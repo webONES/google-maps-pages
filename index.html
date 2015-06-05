@@ -23,15 +23,14 @@
         }
         var map = new google.maps.Map(mapCanvas, mapOptions);
         
-        // right click context menu
+        // right click blue marker
         var i = 1;
-        var rightClick = google.maps.event.addListener(
+        google.maps.event.addListener(
           map,
           "rightclick",
           function( e ) {
             var marker = new google.maps.Marker({
-              lat: e.latLng.lat(),
-              lng: e.latLng.lng(),
+              position: e.latLng,
               map: map,
               title: ('Blue marker ' + i),
               icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
@@ -41,21 +40,21 @@
           }
         );
         
-        var click = google.maps.event.addListener(
-            map,
-            "click",
-            function( e ) {
-              var marker = new google.maps.Marker({
-                lat: e.latLng.lat(),
-                lng: e.latLng.lng(),
-                map: map,
-                title: ('Red marker ' + i),
-              });
-              i++;
-              console.log( e );
-            }
-          );
-        });
+        // click red marker
+        google.maps.event.addListener(
+          map,
+          "click",
+          function( e ) {
+            var marker = new google.maps.Marker({
+              position: e.latLng,
+              map: map,
+              title: ('Red marker ' + i),
+            });
+            i++;
+            console.log( e );
+          }
+        );
+      });
     </script>
   </head>
   <body>
