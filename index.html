@@ -29,11 +29,18 @@
           map,
           "rightclick",
           function( e ) {
+            if($('#marker-blue').is(':selected')){
+              var icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+            } else {
+              var icon = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+            }
+              
+            
             var marker = new google.maps.Marker({
               position: e.latLng,
               map: map,
               title: ('Blue marker ' + i),
-              icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+              icon: icon
             });
             i++;
             console.log( e );
@@ -74,9 +81,11 @@
       <p>Examples for Google Maps V3</p>
       <ul>
         <li>Left click for a marker</li>
-        <li>Right click for a different marker</li>
+        <li>Right click is marker of choosen color:</li>
       </ul>
       
+      <input type="radio" name="marker-color" value="blue" id="marker-blue">Blue<br>
+      <input type="radio" name="marker-color" value="yellow" id="marker-yellow">Yellow
 
       <div id="map-canvas" class="map-canvas"></div>
       
