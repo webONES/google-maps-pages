@@ -29,7 +29,7 @@
           map,
           "rightclick",
           function( e ) {
-            this.addMarker({
+            map.addMarker({
               lat: e.latLng.lat(),
               lng: e.latLng.lng(),
               title: ('Blue marker ' + i),
@@ -44,7 +44,7 @@
             map,
             "click",
             function( e ) {
-              this.addMarker({
+              map.addMarker({
                 lat: e.latLng.lat(),
                 lng: e.latLng.lng(),
                 title: ('Red marker ' + i),
