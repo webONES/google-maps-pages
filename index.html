@@ -25,24 +25,10 @@
         
         // right click context menu
         var i = 1;
-        map.setContextMenu({
-          control: 'map',
-          options: [{
-            title: 'Add Red Marker',
-            name: 'add_red_marker',
-            action: function(e) {
-              this.addMarker({
-                lat: e.latLng.lat(),
-                lng: e.latLng.lng(),
-                title: ('Red marker ' + i)
-              });
-              i++;
-            }
-          }, 
-          {
-            title: 'Add Blue Marker',
-            name: 'add_blue_marker',
-            action: function(e) {
+        var rightClick = google.maps.event.addListener(
+            map,
+            "rightclick",
+            function( event ) {
               this.addMarker({
                 lat: e.latLng.lat(),
                 lng: e.latLng.lng(),
@@ -50,11 +36,26 @@
                 icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
               });
               i++;
+              console.log( event );
             }
-          }]
+          );
         });
-
-      });
+        
+        var click = google.maps.event.addListener(
+            map,
+            "click",
+            function( event ) {
+              this.addMarker({
+                lat: e.latLng.lat(),
+                lng: e.latLng.lng(),
+                title: ('Red marker ' + i),
+                icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+              });
+              i++;
+              console.log( event );
+            }
+          );
+        });
     </script>
   </head>
   <body>
