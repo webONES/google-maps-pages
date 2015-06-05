@@ -29,7 +29,7 @@
           map,
           "rightclick",
           function( e ) {
-            if($('#marker-blue').is(':selected')){
+            if($('#marker-blue').is(':checked')){
               var icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
             } else {
               var icon = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
@@ -84,8 +84,12 @@
         <li>Right click is marker of choosen color:</li>
       </ul>
       
-      <input type="radio" name="marker-color" value="blue" id="marker-blue">Blue<br>
-      <input type="radio" name="marker-color" value="yellow" id="marker-yellow">Yellow
+      <label>
+        <input type="radio" name="marker-color" value="blue" id="marker-blue">Blue
+      </label><br>
+      </label>
+        <input type="radio" name="marker-color" value="yellow" id="marker-yellow">Yellow
+      </label>
 
       <div id="map-canvas" class="map-canvas"></div>
       
