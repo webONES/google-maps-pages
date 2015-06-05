@@ -29,9 +29,10 @@
           map,
           "rightclick",
           function( e ) {
-            map.addMarker({
+            var marker = new google.maps.Marker({
               lat: e.latLng.lat(),
               lng: e.latLng.lng(),
+              map: map,
               title: ('Blue marker ' + i),
               icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
             });
@@ -44,11 +45,11 @@
             map,
             "click",
             function( e ) {
-              map.addMarker({
+              var marker = new google.maps.Marker({
                 lat: e.latLng.lat(),
                 lng: e.latLng.lng(),
+                map: map,
                 title: ('Red marker ' + i),
-                icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
               });
               i++;
               console.log( e );
