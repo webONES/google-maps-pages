@@ -28,7 +28,7 @@
         var rightClick = google.maps.event.addListener(
           map,
           "rightclick",
-          function( event ) {
+          function( e ) {
             this.addMarker({
               lat: e.latLng.lat(),
               lng: e.latLng.lng(),
@@ -36,14 +36,14 @@
               icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
             });
             i++;
-            console.log( event );
+            console.log( e );
           }
         );
         
         var click = google.maps.event.addListener(
             map,
             "click",
-            function( event ) {
+            function( e ) {
               this.addMarker({
                 lat: e.latLng.lat(),
                 lng: e.latLng.lng(),
@@ -51,7 +51,7 @@
                 icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
               });
               i++;
-              console.log( event );
+              console.log( e );
             }
           );
         });
